@@ -66,6 +66,7 @@ export function setFavorite(gif, index, favorite_listing) {
 }
 
 export function getSearchResults(e) {
+  console.log("pressed search button");
   return (dispatch, getState) => {
     let is_page = e === 'page';
     let key = e.keyCode || e.which;
