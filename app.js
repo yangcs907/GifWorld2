@@ -3,7 +3,6 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-// Let's create a config file to hold our db username and pass
 const config = require('./config');
 
 const mongoose = require('mongoose');
@@ -14,7 +13,7 @@ const env = process.env.NODE_ENV || 'dev';
 
 // Let's get the cloud url and save that to a variable
 const mlab_url = `mongodb://${config.db_username}:${config.db_pass}@ds117605.mlab.com:17605/test_db`;
-const db_url = 'mongodb://localhost/gt_pt_26';
+const db_url = 'mongodb://localhost/GifWorld2';
 
 // Now we can switch the urls based on if we're in production(on Heroku, etc)
 mongoose.connect(env === 'dev' ? db_url : mlab_url);
