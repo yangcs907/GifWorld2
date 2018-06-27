@@ -12,7 +12,8 @@ const mongoose = require('mongoose');
 const env = process.env.NODE_ENV || 'dev';
 
 // Let's get the cloud url and save that to a variable
-const mlab_url = `mongodb://${config.db_username}:${config.db_pass}@ds117605.mlab.com:17605/test_db`;
+const mlab_url = 'mongodb://heroku_d9hdg32c:qurm274p03n438kkuibuhmau4l@ds011311.mlab.com:11311/heroku_d9hdg32c';
+//`mongodb://${config.db_username}:${config.db_pass}@ds117605.mlab.com:17605/test_db`;
 const db_url = 'mongodb://localhost/GifWorld2';
 
 // Now we can switch the urls based on if we're in production(on Heroku, etc)

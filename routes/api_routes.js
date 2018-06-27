@@ -3,14 +3,7 @@ const router = express.Router();
 const Gif = require('../models/Gif');
 const User = require('../models/User');
 
-// User.remove({}).then(() => console.log('removed'));
-// Gif.remove({}).then(() => console.log('removed'));
 
-// User.findById('5b1077c26de1a513bc3ae5f3').then(user => console.log(user));
-// User.findById('5b1077c26de1a513bc3ae5f3').populate('gifs').exec((err, user) => {
-//   console.log(user);
-// });
-// User.find({}).populate('gifs').then(users => console.log(users));
 
 // Get Favorites
 router.get('/api/favorites', (req, res) => {
@@ -28,7 +21,7 @@ router.get('/api/favorites', (req, res) => {
 
 // Save Favorite
 router.post('/api/gif', (req, res) => {
-  
+
 
   // 1. Check if user exists
   User.findOne({email: req.body.email})
@@ -37,7 +30,7 @@ router.post('/api/gif', (req, res) => {
       // Saves the gif to User gifs -- One to Many
         // Confirms the data is not already attached to Gif/User
       const saveFavorite = (user, gif) => {
-        
+
         // Convert id array values into strings, so we can check them against the user/gif _id
         let user_gifs = user.gifs.map(gif_id => gif_id.toString());
 
@@ -46,7 +39,7 @@ router.post('/api/gif', (req, res) => {
           // Save One to Many association between user and gif
           user.gifs.push(gif._id);
           user.save();
-        }        
+        }
       };
 
       // Checks if gif exists before saving favorite
@@ -67,8 +60,8 @@ router.post('/api/gif', (req, res) => {
             } else {
               // Gif exists
               saveFavorite(user, gif);
-            }            
-            
+            }
+
         });
       };
 
@@ -99,7 +92,7 @@ router.post('/api/gif', (req, res) => {
             res.send({ message: 'Favorite saved to User successfully!' });
           });
       }
-    
+
     });
 });
 
