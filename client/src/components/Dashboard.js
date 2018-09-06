@@ -22,7 +22,7 @@ class Dashboard extends Component {
     let listing = this.props.show_favorites ? this.props.favorites : this.props.results;
 
     return(
-      <section className="dashboard" >
+      <section className="dashboard">
         <div className="tabs row">
           <span className={`${!this.props.show_favorites ? 'active' : ''}`} onClick={() => this.props.switchTab(false)}>Results</span>
         </div>
