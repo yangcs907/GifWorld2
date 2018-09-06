@@ -26,8 +26,13 @@ const linkStyle = {
   marginRight: "5px"
 };
 
+const headerStyle = {
+  width:"9999px",
+  maxWidth: "100%"
+}
+
 const Header = props => (
-  <header className="row split y-center">
+  <header className="row split y-center" style={headerStyle}>
     <div className="row y-center">
       <Link to="/">
         <h4 style={logoStyle} onClick={props.handleStartFalse}><i className="fa fa-bolt"></i> GifWorld</h4>

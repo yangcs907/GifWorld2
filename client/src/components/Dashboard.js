@@ -25,7 +25,6 @@ class Dashboard extends Component {
       <section className="dashboard" >
         <div className="tabs row">
           <span className={`${!this.props.show_favorites ? 'active' : ''}`} onClick={() => this.props.switchTab(false)}>Results</span>
-          <span> | </span>
         </div>
 
         {!this.props.results.length && !this.props.show_favorites ? <h3>Search for a gif using the search bar above</h3> : ''}

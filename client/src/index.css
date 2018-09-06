@@ -191,6 +191,7 @@ header span.auth:hover:after {
 
 .dashboard {
     padding: 25px 7%;
+    max-width: 100%;
 }
 
 .tabs {
