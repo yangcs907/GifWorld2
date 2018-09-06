@@ -46,12 +46,6 @@ const Header = props => (
             <a href="https://www.linkedin.com/in/chris-yang-53a66636/">
               <i className="fab fa-linkedin"></i>
             </a>
-            <p>                </p>
-            <span>|</span>
-            <p>                </p>
-            <a href="https://github.com/yangcs907">
-              <i className="fab fa-github"></i>
-            </a>
           </div>
     </div>
 </header>
