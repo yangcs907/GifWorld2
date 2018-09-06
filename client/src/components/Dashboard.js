@@ -26,14 +26,11 @@ class Dashboard extends Component {
         <div className="tabs row">
           <span className={`${!this.props.show_favorites ? 'active' : ''}`} onClick={() => this.props.switchTab(false)}>Results</span>
           <span> | </span>
-          <span className={`${this.props.show_favorites ? 'active' : ''}`} onClick={() => this.props.switchTab(true)}><i className="fa fa-heart"></i>    Favorites</span>
         </div>
 
         {!this.props.results.length && !this.props.show_favorites ? <h3>Search for a gif using the search bar above</h3> : ''}
 
         {this.props.results.length && !this.props.show_favorites ? <p className="query">Gif results for "{this.props.query}"</p> : ''}
-
-        {this.props.show_favorites && !listing.length ? <h3>Click on the <i className="fa fa-heart"></i> on a gif result to favorite a gif</h3> : ''}
         <div className="listing">
           {listing.map((gif, index) => (
             <div
@@ -43,9 +40,7 @@ class Dashboard extends Component {
               <div className="giphy-controls row split">
                 {this.props.show_favorites ?
                   <button onClick={(e) => this.props.setFavorite(gif, index, true)}>Remove</button>
-                  : <i
-                      className={`${gif.favorite ? 'fa' : 'far'} fa-heart ${gif.favorite ? 'added' : ''}`}
-                      onClick={(e) => this.props.setFavorite(gif, index)}></i>}
+                  : ""}
                 <button onClick={() => this.copyLinkAddress(gif.url)}>Copy Link</button>
               </div>
             </div>

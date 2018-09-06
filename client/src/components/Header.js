@@ -42,11 +42,6 @@ const Header = props => (
             value={props.search} />
           <i className="fa fa-search" onClick={props.getSearchResults}></i>
         </div>
-          <div style={linkStyle}>
-            <a href="https://www.linkedin.com/in/chris-yang-53a66636/">
-              <i className="fab fa-linkedin"></i>
-            </a>
-          </div>
     </div>
 </header>
 );
